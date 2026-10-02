@@ -1,0 +1,47 @@
+@font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/CormorantGaramond-400-latin.woff2") format("woff2"); }
+@font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 400; font-display: swap; src: url("/fonts/CormorantGaramond-400i-latin.woff2") format("woff2"); }
+@font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url("/fonts/CormorantGaramond-500-latin.woff2") format("woff2"); }
+@font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("/fonts/CormorantGaramond-500i-latin.woff2") format("woff2"); }
+@font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("/fonts/CormorantGaramond-600-latin.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/Montserrat-400-latin.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 500; font-display: swap; src: url("/fonts/Montserrat-500-latin.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 600; font-display: swap; src: url("/fonts/Montserrat-600-latin.woff2") format("woff2"); }
+@font-face { font-family: "Palatino Linotype"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/PalatinoLinotype-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Palatino Linotype"; font-style: italic; font-weight: 400; font-display: swap; src: url("/fonts/PalatinoLinotype-Italic.ttf") format("truetype"); }
+@font-face { font-family: "Palatino Linotype"; font-style: normal; font-weight: 700; font-display: swap; src: url("/fonts/PalatinoLinotype-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Palatino Linotype"; font-style: italic; font-weight: 700; font-display: swap; src: url("/fonts/PalatinoLinotype-BoldItalic.ttf") format("truetype"); }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 12%;
+    --primary: 233 61% 8%;
+    --primary-foreground: 240 4% 87%;
+    --secondary: 228 29% 96%;
+    --secondary-foreground: 233 61% 8%;
+    --muted: 240 5% 97%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 38 41% 61%;
+    --accent-foreground: 233 61% 8%;
+    --destructive: 0 53% 36%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 8% 89%;
+    --input: 240 6% 80%;
+    --ring: 38 41% 61%;
+    --radius: 0.125rem;
+  }
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body { @apply bg-background font-sans text-foreground; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  ::selection { background: #F2E5C8; color: #080B21; }
+}
