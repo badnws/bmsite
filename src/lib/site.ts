@@ -21,6 +21,17 @@ export const site = {
     { name: "Matheus Barbosa", oab: "OAB/PR 132.397" },
     { name: "Anthony Mortari", oab: "OAB/PR 130.304" },
   ],
+  /** Registro da sociedade (identificação exigida pelo Provimento 205/2021). */
+  registration: { oab: "OAB/PR 23.014", cnpj: "65.844.801/0001-89" },
+  /** Seções da página inicial — usadas no menu do cabeçalho. */
+  sections: [
+    { to: "/#escritorio", label: "Escritório" },
+    { to: "/#areas", label: "Áreas de atuação" },
+    { to: "/#socios", label: "Sócios" },
+    { to: "/blog", label: "Artigos" },
+    { to: "/#contato", label: "Contato" },
+  ],
+  /** Páginas internas — também definem as rotas pré-renderizadas. */
   nav: [
     { to: "/escritorio", label: "O Escritório" },
     { to: "/areas-de-atuacao", label: "Áreas de Atuação" },

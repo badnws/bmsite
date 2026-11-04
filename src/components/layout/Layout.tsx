@@ -9,7 +9,7 @@ function ScrollManager() {
     if (hash) {
       const t = window.setTimeout(() => {
         const el = document.getElementById(decodeURIComponent(hash.slice(1)));
-        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 104, behavior: "smooth" });
+        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 72, behavior: "smooth" });
       }, 80);
       return () => window.clearTimeout(t);
     }

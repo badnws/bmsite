@@ -6,10 +6,9 @@
 @font-face { font-family: "Montserrat"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/Montserrat-400-latin.woff2") format("woff2"); }
 @font-face { font-family: "Montserrat"; font-style: normal; font-weight: 500; font-display: swap; src: url("/fonts/Montserrat-500-latin.woff2") format("woff2"); }
 @font-face { font-family: "Montserrat"; font-style: normal; font-weight: 600; font-display: swap; src: url("/fonts/Montserrat-600-latin.woff2") format("woff2"); }
-@font-face { font-family: "Palatino Linotype"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/PalatinoLinotype-Regular.ttf") format("truetype"); }
-@font-face { font-family: "Palatino Linotype"; font-style: italic; font-weight: 400; font-display: swap; src: url("/fonts/PalatinoLinotype-Italic.ttf") format("truetype"); }
-@font-face { font-family: "Palatino Linotype"; font-style: normal; font-weight: 700; font-display: swap; src: url("/fonts/PalatinoLinotype-Bold.ttf") format("truetype"); }
-@font-face { font-family: "Palatino Linotype"; font-style: italic; font-weight: 700; font-display: swap; src: url("/fonts/PalatinoLinotype-BoldItalic.ttf") format("truetype"); }
+@font-face { font-family: "TeX Gyre Pagella"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/tex-gyre-pagella-400.woff2") format("woff2"); }
+@font-face { font-family: "TeX Gyre Pagella"; font-style: italic; font-weight: 400; font-display: swap; src: url("/fonts/tex-gyre-pagella-400italic.woff2") format("woff2"); }
+@font-face { font-family: "TeX Gyre Pagella"; font-style: normal; font-weight: 700; font-display: swap; src: url("/fonts/tex-gyre-pagella-700.woff2") format("woff2"); }
 
 @tailwind base;
 @tailwind components;
@@ -44,4 +43,5 @@
   h1, h2, h3 { text-wrap: balance; }
   p { text-wrap: pretty; }
   ::selection { background: #F2E5C8; color: #080B21; }
+  a:focus-visible { outline: 2px solid #C4A671; outline-offset: 3px; border-radius: 1px; }
 }

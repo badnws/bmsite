@@ -1,4 +1,4 @@
-export type Member = { name: string; initials: string; role: string; oab: string; bio: string[]; focus: string[]; photo?: string };
+export type Member = { name: string; initials: string; role: string; oab: string; bio: string[]; focus: string[]; photo?: string; credentials: string; practice: string };
 
 export const team: Member[] = [
   {
@@ -11,6 +11,8 @@ export const team: Member[] = [
       "Graduado em Direito pela Universidade Estadual de Londrina (UEL) e pós-graduado em Direito Público. Atuou no Poder Judiciário como assessor de juiz em Vara da Fazenda Pública e em Vara Cível.",
       "No escritório, concentra-se no direito público — improbidade administrativa, licitações, saúde pública (SUS), servidores públicos e terceiro setor (associações e cooperativas) —, além do direito condominial e imobiliário. Membro fundador do Grupo de Estudos em Processo Civil da UEL.",
     ],
+    credentials: "Graduado em Direito pela Universidade Estadual de Londrina (UEL) e pós-graduado em Direito Público. Foi assessor de juiz em Vara da Fazenda Pública e em Vara Cível. Membro fundador do Grupo de Estudos em Processo Civil da UEL.",
+    practice: "Atua em direito público (improbidade administrativa, licitações, SUS, servidores públicos e terceiro setor), direito condominial e imobiliário.",
     focus: ["Direito Público", "Improbidade", "Licitações", "SUS", "Servidores", "Terceiro Setor", "Condominial", "Imobiliário"],
   },
   {
@@ -23,6 +25,8 @@ export const team: Member[] = [
       "Bacharel em Direito pela Universidade Estadual de Londrina (UEL). Conduz a frente de direito privado do escritório, com atuação em direito civil — incluindo família e sucessões (divórcios, alimentos, inventários e partilhas) —, bancário, médico e empresarial.",
       "Presidente do Grupo de Estudos em Processo Civil da UEL.",
     ],
+    credentials: "Bacharel em Direito pela Universidade Estadual de Londrina (UEL). Presidente do Grupo de Estudos em Processo Civil da UEL.",
+    practice: "Atua em direito civil, família e sucessões, direito bancário, médico e empresarial.",
     focus: ["Direito Privado", "Civil", "Família", "Inventários", "Bancário", "Médico", "Empresarial"],
   },
 ];

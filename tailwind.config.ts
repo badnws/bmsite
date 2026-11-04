@@ -14,7 +14,8 @@ export default {
       fontFamily: {
         display: ['"Cormorant Garamond"', "Garamond", '"Times New Roman"', "serif"],
         sans: ["Montserrat", '"Helvetica Neue"', "Arial", "sans-serif"],
-        serif: ['"Palatino Linotype"', '"Book Antiqua"', "Palatino", "Georgia", "serif"],
+        // TeX Gyre Pagella: desenho de Palatino com licença livre para web (GUST). Palatino Linotype não pode ser hospedada sem licença de webfont.
+        serif: ['"TeX Gyre Pagella"', '"Palatino Linotype"', '"Book Antiqua"', "Palatino", "Georgia", "serif"],
       },
       colors: {
         border: hsl("border"), input: hsl("input"), ring: hsl("ring"),
