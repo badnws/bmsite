@@ -8,7 +8,7 @@ import { asset } from "@/lib/utils";
 
 export default function Equipe() {
   return (
-    <Page title="Equipe" description="Matheus Barbosa (OAB/PR 132.397), especialista em Direito Público, e Anthony Mortari (OAB/PR 130.304), direito privado — sócios do Barbosa & Mortari Advogados." image="assets/equipe.png">
+    <Page title="Advogados sócios" description="Matheus Barbosa (OAB/PR 132.397), especialista em Direito Público, e Anthony Mortari (OAB/PR 130.304), direito privado — sócios do Barbosa & Mortari Advogados." image="assets/equipe.jpg">
       <PageHeader eyebrow="Equipe" title="Os sócios" description="Cada caso é conduzido pessoalmente pelos sócios do escritório." />
       <section className="container grid gap-14 py-24 md:grid-cols-2 lg:gap-20">
         {team.map((m, i) => (

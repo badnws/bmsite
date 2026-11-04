@@ -6,7 +6,7 @@ import { areas } from "@/data/areas";
 
 export default function AreasAtuacao() {
   return (
-    <Page title="Áreas de Atuação" description="Direito público e terceiro setor, civil, família e sucessões, bancário, administrativo, contratual, imobiliário, condominial, previdenciário e trabalhista em Londrina/PR.">
+    <Page title="Áreas de atuação em Londrina/PR" description="Advogados em Londrina/PR: direito público e terceiro setor, civil, família e sucessões, bancário, imobiliário, condominial, previdenciário e trabalhista.">
       <PageHeader
         eyebrow="Áreas de atuação"
         title="Nossas áreas de atuação"

@@ -9,7 +9,7 @@ import { asset } from "@/lib/utils";
 
 export default function Escritorio() {
   return (
-    <Page title="O Escritório" description="Conheça o Barbosa & Mortari Advogados, escritório em Londrina/PR com atuação consultiva e contenciosa conduzida pessoalmente pelos sócios." image="assets/equipe.png">
+    <Page title="Escritório de advocacia em Londrina" description="Conheça o Barbosa & Mortari Advogados, escritório em Londrina/PR com atuação consultiva e contenciosa conduzida pessoalmente pelos sócios." image="assets/equipe.jpg">
       <PageHeader
         eyebrow="O escritório"
         title="Advocacia estratégica e especializada"
@@ -27,7 +27,7 @@ export default function Escritorio() {
           </p>
         </Reveal>
         <Reveal delay={0.1} className="relative overflow-hidden rounded-sm bg-navy-950">
-          <img src={asset("assets/equipe.png")} alt="Matheus Barbosa e Anthony Mortari, sócios do escritório" className="aspect-[4/5] w-full object-cover" />
+          <img src={asset("assets/equipe.jpg")} alt="Matheus Barbosa e Anthony Mortari, sócios do escritório" className="aspect-[4/5] w-full object-cover" />
           <div className="absolute inset-x-0 bottom-0 h-1 bg-gold-foil" />
         </Reveal>
       </section>

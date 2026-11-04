@@ -24,14 +24,16 @@ export default function Index() {
         <img src={asset("assets/logo-mark.png")} alt="" aria-hidden className="pointer-events-none absolute -right-32 top-1/2 hidden w-[760px] -translate-y-1/2 opacity-[0.07] md:block" />
         <div className="container relative flex min-h-[620px] flex-col justify-center gap-8 py-24 md:min-h-[680px]">
           <Reveal>
-            <Eyebrow inverse>Advocacia estratégica e especializada</Eyebrow>
+            <Eyebrow inverse>
+              <h1>Escritório de advocacia em Londrina/PR</h1>
+            </Eyebrow>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="max-w-4xl font-display text-[56px] font-medium leading-[0.98] text-silver md:text-[88px]">
+            <p className="max-w-4xl font-display text-[56px] font-medium leading-[0.98] text-silver md:text-[88px]">
               Rigor técnico.
               <br />
               <em className="font-normal text-gold-300">Atuação estratégica.</em>
-            </h1>
+            </p>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="max-w-xl text-base leading-relaxed text-navy-200 md:text-[17px]">

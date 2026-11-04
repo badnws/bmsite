@@ -4,7 +4,7 @@ export const site = {
   /** Domínio de produção — usado em canonical, Open Graph, sitemap e llms.txt. */
   url: "https://barbosamortari.com.br",
   description:
-    "Escritório de advocacia em Londrina/PR. Direito público (licitações, improbidade, servidores, SUS e terceiro setor), direito civil, família e sucessões, bancário, médico, empresarial, imobiliário, condominial, previdenciário e trabalhista.",
+    "Advogados em Londrina/PR: direito público, civil, família, bancário, imobiliário, condominial, previdenciário e trabalhista. Atendimento direto com os sócios.",
   city: "Londrina/PR",
   address: {
     street: "Rua Pernambuco, 390, Sala 407",

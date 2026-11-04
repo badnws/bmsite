@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { GoldBar } from "@/components/brand/GoldBar";
 import { usePost, usePosts } from "@/hooks/use-posts";
 import { formatDate } from "@/lib/utils";
+import { site } from "@/lib/site";
 
 export default function BlogPost() {
   const { slug = "" } = useParams();
@@ -45,17 +46,32 @@ export default function BlogPost() {
       title={post.title}
       description={post.excerpt}
       type="article"
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        headline: post.title,
-        description: post.excerpt,
-        datePublished: post.date,
-        inLanguage: "pt-BR",
-        articleSection: post.category,
-        author: { "@type": "Person", name: post.author },
-        publisher: { "@type": "LegalService", name: "Barbosa & Mortari Advogados" },
-      }}
+      jsonLd={[
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "@id": `${site.url}/blog/${post.slug}#artigo`,
+          mainEntityOfPage: `${site.url}/blog/${post.slug}`,
+          headline: post.title,
+          description: post.excerpt,
+          image: `${site.url}/assets/cover-navy.jpg`,
+          datePublished: post.date,
+          dateModified: post.date,
+          inLanguage: "pt-BR",
+          articleSection: post.category,
+          author: { "@type": "Person", name: post.author, url: `${site.url}/equipe` },
+          publisher: { "@id": `${site.url}/#escritorio` },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Início", item: `${site.url}/` },
+            { "@type": "ListItem", position: 2, name: "Blog", item: `${site.url}/blog` },
+            { "@type": "ListItem", position: 3, name: post.title, item: `${site.url}/blog/${post.slug}` },
+          ],
+        },
+      ]}
     >
       <article>
         <header className="bg-paper">
