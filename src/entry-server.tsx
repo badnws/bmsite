@@ -1,17 +1,18 @@
 import { StrictMode } from "react";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { AppRoutes, createQueryClient } from "./App";
-import { Toaster } from "@/components/ui/sonner";
+import { LazyMotion, domAnimation } from "framer-motion";
+import { AppRoutes } from "./App";
 import { SeoContext, type ResolvedSeo } from "@/hooks/use-document-title";
 import { posts } from "@/data/posts";
+import { areaPages } from "@/data/area-pages";
 import { site } from "@/lib/site";
 
 /** Todas as URLs indexáveis do site — geram um HTML estático cada e entram no sitemap. */
 export const routes: { path: string; lastmod?: string }[] = [
   { path: "/" },
   ...site.nav.map((n) => ({ path: n.to })),
+  ...areaPages.map((a) => ({ path: "/areas-de-atuacao/" + a.slug, lastmod: a.reviewed })),
   ...posts.map((p) => ({ path: "/blog/" + p.slug, lastmod: p.date })),
 ];
 
@@ -22,12 +23,11 @@ export function render(url: string): { html: string; seo: ResolvedSeo } {
   const html = renderToString(
     <StrictMode>
       <SeoContext.Provider value={collector}>
-        <QueryClientProvider client={createQueryClient()}>
+        <LazyMotion features={domAnimation} strict>
           <StaticRouter location={url}>
             <AppRoutes />
           </StaticRouter>
-          <Toaster />
-        </QueryClientProvider>
+            </LazyMotion>
       </SeoContext.Provider>
     </StrictMode>,
   );

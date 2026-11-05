@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Page } from "@/components/motion/Page";
 import { Button } from "@/components/ui/button";
 import { areas, otherAreas } from "@/data/areas";
+import { areaPageBySlug } from "@/data/area-pages";
 import { team } from "@/data/team";
 import { usePosts } from "@/hooks/use-posts";
 import { site } from "@/lib/site";
@@ -66,7 +67,7 @@ export default function Index() {
         <ul className="grid gap-x-12 sm:grid-cols-2">
           {areas.map((a) => (
             <li key={a.slug} className="border-t border-navy-200 py-6">
-              <Link to={"/areas-de-atuacao#" + a.slug} className="group block">
+              <Link to={areaPageBySlug(a.slug) ? "/areas-de-atuacao/" + a.slug : "/areas-de-atuacao#" + a.slug} className="group block">
                 <h3 className="font-serif text-[23px] leading-snug text-navy-950 group-hover:underline group-hover:decoration-gold-500 group-hover:decoration-1 group-hover:underline-offset-[5px]">
                   {a.title}
                 </h3>

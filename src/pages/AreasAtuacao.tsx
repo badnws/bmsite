@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import { Page } from "@/components/motion/Page";
 import { Reveal } from "@/components/motion/Reveal";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { ContactBand } from "@/components/layout/ContactBand";
 import { areas } from "@/data/areas";
+import { areaPageBySlug } from "@/data/area-pages";
 
 export default function AreasAtuacao() {
   return (
@@ -23,6 +25,14 @@ export default function AreasAtuacao() {
                 <div className="flex flex-col gap-3">
                   <h2 className="font-display text-4xl font-medium leading-tight text-navy-950">{a.title}</h2>
                   <p className="text-[15px] leading-relaxed text-muted-foreground">{a.summary}</p>
+                  {areaPageBySlug(a.slug) && (
+                    <Link
+                      to={"/areas-de-atuacao/" + a.slug}
+                      className="self-start text-[15px] text-navy-950 underline decoration-gold-500 decoration-1 underline-offset-[5px] hover:decoration-navy-950"
+                    >
+                      Página completa sobre {a.title.charAt(0).toLowerCase() + a.title.slice(1)}
+                    </Link>
+                  )}
                 </div>
               </div>
               <ul className="grid gap-x-8 gap-y-3 self-center sm:grid-cols-2">
