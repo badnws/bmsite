@@ -9,7 +9,7 @@ export const site = {
   address: {
     street: "Rua Pernambuco, 390, sala 407, Centro",
     cityLine: "CEP 86020-120 · Londrina, Paraná",
-    maps: "https://www.google.com/maps/search/?api=1&query=Rua+Pernambuco%2C+390%2C+Londrina%2C+PR%2C+86020-120",
+    maps: "https://www.google.com/maps/place/Barbosa+e+Mortari+Advogados/@-23.3113669,-51.1655619,761m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94eb45bff2d77869:0xf469d1a7902b25ff!8m2!3d-23.3113718!4d-51.162987!16s%2Fg%2F11zyzb9ddb",
   },
   email: "contato@barbosamortari.com.br",
   phones: [

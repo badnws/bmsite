@@ -171,8 +171,8 @@ export default function Index() {
               </address>
             </div>
             <iframe
-              title="Mapa: Rua Pernambuco, 390, Centro, Londrina/PR"
-              src="https://www.google.com/maps?q=Rua+Pernambuco,+390,+Centro,+Londrina+-+PR,+86020-120&output=embed"
+              title="Mapa: Barbosa & Mortari Advogados, Rua Pernambuco, 390, Centro, Londrina/PR"
+              src="https://www.google.com/maps?q=Barbosa+e+Mortari+Advogados,+Rua+Pernambuco,+390,+Londrina+-+PR&ll=-23.3113718,-51.162987&z=17&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="h-72 w-full border-0 bg-navy-900 grayscale-[0.6] sm:col-span-2"
