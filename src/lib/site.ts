@@ -4,10 +4,10 @@ export const site = {
   /** Domínio de produção — usado em canonical, Open Graph, sitemap e llms.txt. */
   url: "https://barbosamortari.com.br",
   description:
-    "Advogados em Londrina/PR: direito público, civil, família, bancário, imobiliário, condominial, previdenciário e trabalhista. Atendimento direto com os sócios.",
+    "Advogados em Londrina/PR, atendimento on-line em todo o Brasil: direito público, precatórios, servidor público, INSS, golpe do PIX e fraudes bancárias.",
   city: "Londrina/PR",
   address: {
-    street: "Rua Pernambuco, 390, Sala 407",
+    street: "Rua Pernambuco, 390, sala 407, Centro",
     cityLine: "CEP 86020-120 · Londrina, Paraná",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Pernambuco%2C+390%2C+Londrina%2C+PR%2C+86020-120",
   },
@@ -25,8 +25,8 @@ export const site = {
   registration: { oab: "OAB/PR 23.014", cnpj: "65.844.801/0001-89" },
   /** Seções da página inicial — usadas no menu do cabeçalho. */
   sections: [
-    { to: "/#escritorio", label: "Escritório" },
     { to: "/#areas", label: "Áreas de atuação" },
+    { to: "/#escritorio", label: "Escritório" },
     { to: "/#socios", label: "Sócios" },
     { to: "/blog", label: "Artigos" },
     { to: "/#contato", label: "Contato" },

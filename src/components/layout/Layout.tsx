@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { WhatsAppButton } from "./WhatsAppButton";
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -27,6 +28,7 @@ export function Layout() {
         <Outlet />
       </div>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

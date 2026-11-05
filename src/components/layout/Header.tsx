@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
-import { Menu } from "lucide-react";
+import { Menu, MessageCircle } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { site } from "@/lib/site";
-
-const phone = site.phones[0];
 
 export function Header() {
   return (
@@ -21,9 +19,11 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <a href={phone.href} className="hidden text-sm font-medium tabular-nums text-navy-950 lg:block">
-          {phone.label}
-        </a>
+        <Button asChild variant="whatsapp" size="sm" className="hidden lg:inline-flex">
+          <a href={site.whatsapp} target="_blank" rel="noreferrer">
+            <MessageCircle aria-hidden /> Falar pelo WhatsApp
+          </a>
+        </Button>
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Abrir menu">
@@ -46,11 +46,10 @@ export function Header() {
               ))}
             </nav>
             <div className="mt-auto flex flex-col gap-3 px-7 pb-8">
-              <a href={phone.href} className="text-sm tabular-nums text-navy-200 hover:text-silver">
-                {phone.label}
-              </a>
-              <Button asChild variant="accent">
-                <a href={site.whatsapp} target="_blank" rel="noreferrer">Falar pelo WhatsApp</a>
+              <Button asChild variant="whatsapp">
+                <a href={site.whatsapp} target="_blank" rel="noreferrer">
+                  <MessageCircle aria-hidden /> Falar pelo WhatsApp
+                </a>
               </Button>
             </div>
           </SheetContent>

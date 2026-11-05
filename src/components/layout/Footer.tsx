@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="bg-navy-950 text-sm text-navy-200">
       <div className="container flex flex-col gap-10 border-t border-white/[0.08] py-12 md:flex-row md:items-start md:justify-between">
         <div className="flex flex-col gap-4">
-          <Logo variant="reverse" className="h-8" />
+          <Logo variant="reverse" className="h-8 self-start" />
           <p className="max-w-sm leading-relaxed">
             Sociedade de advogados inscrita na {site.registration.oab}. CNPJ {site.registration.cnpj}.
           </p>

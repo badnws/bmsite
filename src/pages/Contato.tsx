@@ -1,4 +1,4 @@
-import { Mail, MapPin, MessageCircle, Phone, type LucideIcon } from "lucide-react";
+import { Mail, MapPin, MessageCircle, type LucideIcon } from "lucide-react";
 import { Page } from "@/components/motion/Page";
 import { Reveal } from "@/components/motion/Reveal";
 import { PageHeader } from "@/components/layout/PageHeader";
@@ -10,13 +10,12 @@ type Item = { icon: LucideIcon; label: string; value: string; sub?: string; href
 
 const items: Item[] = [
   { icon: Mail, label: "E-mail", value: site.email, href: "mailto:" + site.email },
-  ...site.phones.map((p) => ({ icon: Phone, label: "Telefone", value: p.label, href: p.href })),
   { icon: MapPin, label: "Endereço", value: site.address.street, sub: site.address.cityLine, href: site.address.maps, external: true },
 ];
 
 export default function Contato() {
   return (
-    <Page title="Contato" description="Fale com o Barbosa & Mortari Advogados: e-mail, telefones, WhatsApp e endereço na Rua Pernambuco, 390, Sala 407, Londrina/PR.">
+    <Page title="Contato" description="Fale com o Barbosa & Mortari Advogados: e-mail, WhatsApp e endereço na Rua Pernambuco, 390, sala 407, Centro, Londrina/PR.">
       <PageHeader eyebrow="Contato" title="Fale com o escritório" description="Atendimento direto com os sócios, com sigilo e objetividade." />
       <section className="container grid gap-12 py-20 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
         <Reveal className="flex flex-col">

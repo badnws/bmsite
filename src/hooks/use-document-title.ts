@@ -27,13 +27,13 @@ export function resolveSeo({ title, description, image, type = "website", noinde
   const path = pathname !== "/" ? pathname.replace(/\/+$/, "") : "/";
   return {
     title: !title
-      ? `${site.name} · Advogados em Londrina/PR`
+      ? `${site.name} · Advocacia em Londrina/PR`
       : title.length + site.name.length + 3 > 65
         ? title // títulos longos (artigos) ficam sem o sufixo para não serem cortados no Google
         : `${title} · ${site.name}`,
     description: description ?? site.description,
     url: path === "/" ? site.url + "/" : site.url + path,
-    image: `${site.url}/${image ?? "assets/cover-navy.jpg"}`,
+    image: `${site.url}/${image ?? "assets/og-escritorio.jpg"}`,
     type,
     robots: noindex ? "noindex, follow" : "index, follow, max-image-preview:large",
     jsonLd: jsonLd ? JSON.stringify(jsonLd) : "",

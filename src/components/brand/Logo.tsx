@@ -6,5 +6,5 @@ type LogoProps = { variant?: keyof typeof files; className?: string };
 
 /** Official logo files only — never retype the wordmark. */
 export function Logo({ variant = "primary", className }: LogoProps) {
-  return <img src={asset("assets/" + files[variant])} alt="Barbosa & Mortari Advogados" className={cn("block h-10 w-auto", className)} />;
+  return <img src={asset("assets/" + files[variant])} alt="Barbosa & Mortari Advogados" width={2911} height={439} className={cn("block h-10 w-auto max-w-none object-contain", className)} />;
 }
