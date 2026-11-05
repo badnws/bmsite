@@ -1,5 +1,4 @@
 import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
-import { LazyMotion, domAnimation } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import Index from "@/pages/Index";
 import Escritorio from "@/pages/Escritorio";
@@ -34,10 +33,8 @@ const Router = import.meta.env.VITE_HASH_ROUTER ? HashRouter : BrowserRouter;
 
 export default function App() {
   return (
-    <LazyMotion features={domAnimation} strict>
-      <Router>
-        <AppRoutes />
-      </Router>
-    </LazyMotion>
+    <Router>
+      <AppRoutes />
+    </Router>
   );
 }

@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { ContactBand } from "@/components/layout/ContactBand";
 import { PortraitPlaceholder } from "@/components/PortraitPlaceholder";
 import { team } from "@/data/team";
-import { asset } from "@/lib/utils";
+import { asset, photoSrcSet } from "@/lib/utils";
 
 export default function Equipe() {
   return (
@@ -13,7 +13,7 @@ export default function Equipe() {
       <section className="container grid gap-14 py-24 md:grid-cols-2 lg:gap-20">
         {team.map((m, i) => (
           <Reveal key={m.oab} delay={i * 0.08} className="grid gap-8 sm:grid-cols-[220px_1fr] md:grid-cols-1 lg:grid-cols-[240px_1fr]">
-            {m.photo ? <img src={asset(m.photo)} alt={m.name} className="aspect-[4/5] w-full object-cover object-[center_20%]" /> : <PortraitPlaceholder initials={m.initials} />}
+            {m.photo ? <img src={asset(m.photo)} srcSet={photoSrcSet(m.photo)} sizes="(min-width: 1024px) 40vw, 100vw" alt={m.name} width={600} height={750} decoding="async" className="aspect-[4/5] w-full object-cover object-[center_20%]" /> : <PortraitPlaceholder initials={m.initials} />}
             <div className="flex flex-col gap-3 self-start">
               <span className="text-[11px] font-semibold uppercase tracking-label text-gold-800">{m.role}</span>
               <h2 className="font-display text-4xl font-medium leading-tight text-navy-950">{m.name}</h2>

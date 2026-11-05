@@ -14,3 +14,9 @@ const dateFmt = new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "long"
 export function formatDate(iso: string) {
   return dateFmt.format(new Date(iso + "T12:00:00"));
 }
+
+/** "assets/matheus.jpg" -> srcset com as versões WebP de 600, 720 e 880 px geradas em public/assets. */
+export function photoSrcSet(path: string) {
+  const base = path.replace(/\.(jpe?g|png)$/i, "");
+  return `${asset(base + "-600.webp")} 600w, ${asset(base + "-720.webp")} 720w, ${asset(base + "-880.webp")} 880w`;
+}

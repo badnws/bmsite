@@ -1,8 +1,7 @@
 import { useEffect, type ReactNode } from "react";
-import { m } from "framer-motion";
 import { useSeo, type Seo } from "@/hooks/use-document-title";
 
-/** A primeira página (vinda pré-renderizada) aparece sem fade; as navegações seguintes mantêm a transição. */
+/** A primeira página (vinda pré-renderizada) aparece sem fade; as navegações seguintes têm uma transição curta em CSS. */
 let firstPaintDone = false;
 
 export function Page({ children, ...seo }: Seo & { children: ReactNode }) {
@@ -11,9 +10,5 @@ export function Page({ children, ...seo }: Seo & { children: ReactNode }) {
   useEffect(() => {
     firstPaintDone = true;
   }, []);
-  return (
-    <m.main initial={animate ? { opacity: 0 } : false} animate={{ opacity: 1 }} transition={{ duration: 0.35, ease: [0.2, 0, 0, 1] }}>
-      {children}
-    </m.main>
-  );
+  return <main className={animate ? "page-enter" : undefined}>{children}</main>;
 }

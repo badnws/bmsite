@@ -10,6 +10,8 @@ export type Seo = {
   type?: "website" | "article";
   noindex?: boolean;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** Imagens a pré-carregar no HTML pré-renderizado (ex.: foto da abertura, que é o LCP). */
+  preload?: { href: string; media?: string; imagesrcset?: string }[];
 };
 
 /** Metadados finais de uma página — usados no navegador (useSeo) e na pré-renderização (entry-server). */
@@ -21,9 +23,10 @@ export type ResolvedSeo = {
   type: "website" | "article";
   robots: string;
   jsonLd: string;
+  preload: { href: string; media?: string; imagesrcset?: string }[];
 };
 
-export function resolveSeo({ title, description, image, type = "website", noindex, jsonLd }: Seo, pathname: string): ResolvedSeo {
+export function resolveSeo({ title, description, image, type = "website", noindex, jsonLd, preload = [] }: Seo, pathname: string): ResolvedSeo {
   const path = pathname !== "/" ? pathname.replace(/\/+$/, "") : "/";
   return {
     title: !title
@@ -37,6 +40,7 @@ export function resolveSeo({ title, description, image, type = "website", noinde
     type,
     robots: noindex ? "noindex, follow" : "index, follow, max-image-preview:large",
     jsonLd: jsonLd ? JSON.stringify(jsonLd) : "",
+    preload,
   };
 }
 

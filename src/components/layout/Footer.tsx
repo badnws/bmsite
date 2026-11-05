@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="bg-navy-950 text-sm text-navy-200">
       <div className="container flex flex-col gap-10 border-t border-white/[0.08] py-12 md:flex-row md:items-start md:justify-between">
         <div className="flex flex-col gap-4">
-          <Logo variant="reverse" className="h-8 self-start" />
+          <Logo variant="reverse" lazy className="h-8 self-start" />
           <p className="max-w-sm leading-relaxed">
             Sociedade de advogados inscrita na {site.registration.oab}. CNPJ {site.registration.cnpj}.
           </p>
@@ -24,7 +24,7 @@ export function Footer() {
           <a href={"mailto:" + site.email} className="hover:text-silver">{site.email}</a>
         </div>
       </div>
-      <div className="container flex flex-col gap-2 border-t border-white/[0.08] py-6 text-xs text-navy-400 md:flex-row md:justify-between">
+      <div className="container flex flex-col gap-2 border-t border-white/[0.08] py-6 text-xs text-navy-300 md:flex-row md:justify-between">
         <span>
           © {new Date().getFullYear()} {site.name}
         </span>

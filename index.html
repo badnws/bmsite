@@ -3,6 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js) — G-JT3CSHQ3XH. O script é baixado depois do carregamento da página
+         para não atrasar a abertura; os eventos ficam na fila (dataLayer) e são enviados normalmente. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JT3CSHQ3XH');
+      (function () {
+        function load() {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JT3CSHQ3XH';
+          document.head.appendChild(s);
+        }
+        if (document.readyState === 'complete') load();
+        else window.addEventListener('load', function () { setTimeout(load, 0); });
+        // Conversões: cliques em WhatsApp, telefone e e-mail, em todas as páginas.
+        document.addEventListener('click', function (e) {
+          var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+          if (!a) return;
+          var h = a.getAttribute('href') || '';
+          var ev = h.indexOf('wa.me/') > -1 ? 'clique_whatsapp' : h.indexOf('tel:') === 0 ? 'clique_telefone' : h.indexOf('mailto:') === 0 ? 'clique_email' : null;
+          if (ev) gtag('event', ev, { link_url: h, pagina: location.pathname });
+        });
+      })();
+    </script>
     <!--seo:start (gerado por página em scripts/prerender.mjs)-->
     <title>Barbosa &amp; Mortari Advogados · Advocacia em Londrina/PR</title>
     <meta name="description" content="Advogados em Londrina/PR, atendimento on-line em todo o Brasil: direito público, precatórios, servidor público, INSS, golpe do PIX e fraudes bancárias." />
@@ -18,7 +44,10 @@
     <meta name="twitter:description" content="Advogados em Londrina/PR, atendimento on-line em todo o Brasil: direito público, precatórios, servidor público, INSS, golpe do PIX e fraudes bancárias." />
     <meta name="twitter:image" content="https://barbosamortari.com.br/assets/og-escritorio.jpg" />
     <!--seo:end-->
-    <link rel="icon" type="image/png" href="/assets/logo-mark.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/Montserrat-latin-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/tex-gyre-pagella-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <link rel="alternate" type="text/markdown" title="LLM summary" href="/llms.txt" />
     <meta name="theme-color" content="#080B21" />
@@ -76,7 +105,7 @@
     </script>
     <noscript>
       <!-- Sem JavaScript, mostra o conteúdo pré-renderizado que as animações deixariam invisível. -->
-      <style>#root [style*="opacity:0"]{opacity:1!important;transform:none!important}</style>
+      <style>.reveal{opacity:1!important;transform:none!important}</style>
     </noscript>
   </head>
   <body>

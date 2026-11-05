@@ -29,6 +29,10 @@ function headFor(seo) {
     `<meta name="twitter:title" content="${esc(seo.title)}" />`,
     `<meta name="twitter:description" content="${esc(seo.description)}" />`,
     `<meta name="twitter:image" content="${seo.image}" />`,
+    ...(seo.preload || []).map(
+      (p) =>
+        `<link rel="preload" as="image" href="${p.href}"${p.imagesrcset ? ` imagesrcset="${p.imagesrcset}" imagesizes="100vw"` : ""}${p.media ? ` media="${p.media}"` : ""} fetchpriority="high" />`,
+    ),
     seo.jsonLd ? `<script type="application/ld+json" id="page-jsonld">${seo.jsonLd.replace(/</g, "\\u003c")}</script>` : "",
   ]
     .filter(Boolean)

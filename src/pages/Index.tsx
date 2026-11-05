@@ -7,7 +7,7 @@ import { areaPageBySlug } from "@/data/area-pages";
 import { team } from "@/data/team";
 import { usePosts } from "@/hooks/use-posts";
 import { site } from "@/lib/site";
-import { asset, cn, formatDate } from "@/lib/utils";
+import { asset, cn, formatDate, photoSrcSet } from "@/lib/utils";
 
 const textLink = "underline decoration-gold-500 decoration-1 underline-offset-[5px] transition-colors hover:decoration-navy-950";
 
@@ -30,19 +30,25 @@ export default function Index() {
   const [phone] = site.phones;
 
   return (
-    <Page>
+    <Page
+      preload={[
+        { href: "/assets/escritorio-sala-m-720.webp", media: "(max-width: 767px)", imagesrcset: "/assets/escritorio-sala-m-480.webp 480w, /assets/escritorio-sala-m-720.webp 720w" },
+        { href: "/assets/escritorio-sala-1280.webp", media: "(min-width: 768px)", imagesrcset: "/assets/escritorio-sala-1280.webp 1280w, /assets/escritorio-sala.webp 2000w" },
+      ]}
+    >
       {/* Abertura: foto do escritório ao fundo, sob uma camada azul-marinho */}
       <section className="relative isolate overflow-hidden bg-navy-950">
         <picture>
-          <source media="(min-width: 768px)" type="image/webp" srcSet={asset("assets/escritorio-sala.webp")} />
-          <source media="(min-width: 768px)" srcSet={asset("assets/escritorio-sala.jpg")} />
-          <source type="image/webp" srcSet={asset("assets/escritorio-sala-m.webp")} />
+          <source media="(min-width: 768px)" type="image/webp" srcSet={`${asset("assets/escritorio-sala-1280.webp")} 1280w, ${asset("assets/escritorio-sala.webp")} 2000w`} sizes="100vw" />
           <img
-            src={asset("assets/escritorio-sala-m.jpg")}
+            src={asset("assets/escritorio-sala-m-720.webp")}
+            srcSet={`${asset("assets/escritorio-sala-m-480.webp")} 480w, ${asset("assets/escritorio-sala-m-720.webp")} 720w`}
+            sizes="100vw"
             alt=""
-            width={900}
-            height={1125}
+            width={720}
+            height={1280}
             fetchPriority="high"
+            decoding="async"
             className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
           />
         </picture>
@@ -103,7 +109,7 @@ export default function Index() {
           {team.map((m) => (
             <article key={m.oab} className="flex flex-col">
               {m.photo && (
-                <img src={asset(m.photo)} alt={m.name} width={600} height={750} loading="lazy" className="aspect-[4/5] w-full bg-navy-50 object-cover object-[center_20%]" />
+                <img src={asset(m.photo)} srcSet={photoSrcSet(m.photo)} sizes="(min-width: 1280px) 400px, (min-width: 640px) 33vw, 100vw" alt={m.name} width={600} height={750} loading="lazy" decoding="async" className="aspect-[4/5] w-full bg-navy-50 object-cover object-[center_20%]" />
               )}
               <h3 className="mt-6 font-serif text-[28px] leading-tight text-navy-950">{m.name}</h3>
               <p className="mt-1 text-sm tabular-nums text-navy-600">{m.oab}</p>

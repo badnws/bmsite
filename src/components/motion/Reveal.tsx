@@ -1,19 +1,36 @@
-import { m, useReducedMotion, type HTMLMotionProps } from "framer-motion";
+import { useEffect, useRef, useState, type HTMLAttributes } from "react";
+import { cn } from "@/lib/utils";
 
-type RevealProps = HTMLMotionProps<"div"> & { delay?: number };
+type RevealProps = HTMLAttributes<HTMLDivElement> & { delay?: number };
 
-/** Calm fade-up on scroll. No bounce, respects reduced motion. */
-export function Reveal({ delay = 0, children, ...props }: RevealProps) {
-  const reduce = useReducedMotion();
+/**
+ * Surge suavemente ao entrar na tela. Feito com CSS + IntersectionObserver (sem biblioteca).
+ * Sem JavaScript, a regra em <noscript> no index.html mantém o conteúdo visível.
+ */
+export function Reveal({ delay = 0, className, style, children, ...props }: RevealProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (!("IntersectionObserver" in window)) return setVisible(true);
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "0px 0px -60px 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <m.div
-      initial={reduce ? false : { opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.6, delay, ease: [0.2, 0, 0, 1] }}
-      {...props}
-    >
+    <div ref={ref} className={cn("reveal", visible && "is-visible", className)} style={delay ? { ...style, transitionDelay: `${delay}s` } : style} {...props}>
       {children}
-    </m.div>
+    </div>
   );
 }

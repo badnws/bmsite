@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
-import { LazyMotion, domAnimation } from "framer-motion";
 import { AppRoutes } from "./App";
 import { SeoContext, type ResolvedSeo } from "@/hooks/use-document-title";
 import { posts } from "@/data/posts";
@@ -23,11 +22,9 @@ export function render(url: string): { html: string; seo: ResolvedSeo } {
   const html = renderToString(
     <StrictMode>
       <SeoContext.Provider value={collector}>
-        <LazyMotion features={domAnimation} strict>
-          <StaticRouter location={url}>
-            <AppRoutes />
-          </StaticRouter>
-            </LazyMotion>
+        <StaticRouter location={url}>
+          <AppRoutes />
+        </StaticRouter>
       </SeoContext.Provider>
     </StrictMode>,
   );

@@ -27,7 +27,7 @@ export default function Escritorio() {
           </p>
         </Reveal>
         <Reveal delay={0.1} className="relative overflow-hidden rounded-sm bg-navy-950">
-          <img src={asset("assets/equipe.jpg")} alt="Matheus Barbosa e Anthony Mortari, sócios do escritório" className="aspect-[4/5] w-full object-cover" />
+          <img src={asset("assets/equipe.webp")} alt="Matheus Barbosa e Anthony Mortari, sócios do escritório" width={746} height={987} decoding="async" className="aspect-[4/5] w-full object-cover" />
           <div className="absolute inset-x-0 bottom-0 h-1 bg-gold-foil" />
         </Reveal>
       </section>
